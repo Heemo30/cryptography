@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://crypto.stanford.edu/sjcl/sjcl.js"></script>
+  <link rel="stylesheet" href="cryptography.css">
+  <title>Encryption/Decryption Example</title>
+</head>
+<body>
+
+  <div id="container">
+    <h1>Cryptographic </h1>
+
+    <label for="message">Message:</label>
+    <textarea id="message" rows="4" cols="50"></textarea>
+
+    <label for="encryptionType">Choose Encryption Type:</label>
+    <select id="encryptionType">
+      <option value="caesar">Caesar Cipher</option>
+      <option value="vigenere">Vigenère Cipher</option>
+    </select>
+
+    <div id="keyInput" style="display: none;">
+      <label for="key">Key (Vigenère Cipher):</label>
+      <input type="text" id="key">
+      <button onclick="generateRandomKey()">Generate Random Key</button>
+    </div>
+
+    <button onclick="processMessage('encrypt')">Encrypt</button>
+    <button onclick="processMessage('decrypt')">Decrypt</button>
+    <button onclick="clearAllFields()">Clear All</button>
+
+    <p id="encryptedMessage">Encrypted Message: <span id="encryptedOutput"></span></p>
+    <p id="decryptedMessage">Decrypted Message: <span id="decryptedOutput"></span></p>
+  </div>
+
+  <script src="cryptography.js"></script>
+
+</body>
+</html>
